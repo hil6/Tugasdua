@@ -1,0 +1,73 @@
+class Perental {
+    String jenisKamera;
+    String merkKamera;
+    String namaPenyewa;
+    String alamatPenyewa;
+    String noTelephone;
+    String NIK;
+
+    boolean statusPenyewaan;
+
+    public Perental(String jenisKamera, String merkKamera, String namaPenyewa, String alamatPenyewa, String noTelephone, String NIK) {
+        this.jenisKamera = jenisKamera;
+        this.merkKamera = merkKamera;
+        this.namaPenyewa = namaPenyewa;
+        this.alamatPenyewa = alamatPenyewa;
+        this.noTelephone = noTelephone;
+        this.NIK = NIK;
+    }
+
+    public void setPenyewaan(boolean status) {
+        this.statusPenyewaan = status;
+    }
+
+    public boolean penyewaan(String alamat) {
+        if (this.statusPenyewaan) {
+            System.out.println("berhasil dirental");
+        } else {
+            System.out.println("gagal dirental");
+        }
+        return this.statusPenyewaan;
+    }
+}
+
+class Penyewa {
+    String nama;
+    String alamat;
+    String namaPenyewa;
+    String alamatPenyewa;
+    String noTelephone;
+    String NIK;
+    boolean statusPenyewaan;
+
+    public Penyewa(String nama, String alamat, String namaPenyewa, String alamatPenyewa, String noTelephone, String NIK) {
+        this.nama = nama;
+        this.alamat = alamat;
+        this.namaPenyewa = namaPenyewa;
+        this.alamatPenyewa = alamatPenyewa;
+        this.noTelephone = noTelephone;
+        this.NIK = NIK;
+    }
+
+    public void menyewa() {
+        Perental perental = new Perental("penyewa1");
+        perental1.setStatuspenyewaan(true);
+        this.statusPenyewaan = perental1.perental(this.alamat);
+    }
+
+    public String lihatPenyewaan() {
+        if (this.statusPenyewaan) {
+            return "penyewaan berhasil";
+        } else {
+            return "penyewaan gagal";
+        }
+    }
+}
+
+public class Tugas2 {
+    public static void main(String[] args) {
+        Penyewa penyewa1 = new Penyewa("penyewa1", "jember");
+        penyewa1.menyewa();
+        System.out.println(penyewa1.lihatPenyewaan());
+    }
+}
